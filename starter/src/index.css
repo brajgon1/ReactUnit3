@@ -85,3 +85,16 @@ code {
   margin-right: 50px;
   margin-top: 20px;
 }
+
+.content-word {
+ line-height: 30px;
+}
+
+.pineapple-title {
+  font-size: 30px;
+  font-weight: 600;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+  color: darkorange;
+}
