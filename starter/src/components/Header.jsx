@@ -7,10 +7,10 @@ const Header = () => {
       <h2>Devmountain Eatery</h2>
       <nav>
         <Link to="" className="nav-btn">
-          <button>Home</button>
+          Home
         </Link>
         <Link to="/newRecipe" className="nav-btn">
-          <button>Add Recipe</button>
+          Add Recipe
         </Link>
       </nav>
     </header>
