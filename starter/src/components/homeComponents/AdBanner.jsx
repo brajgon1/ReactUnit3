@@ -12,7 +12,7 @@ const AdBanner = () => {
           rgba(0, 0, 0, 0.8)),
           url(${salmon})`,
         backgroundSize: "cover",
-        height: "90vh",
+        height: "30vh",
         width: "100%",
         position: "relative",
         color: "white",
