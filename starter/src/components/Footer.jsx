@@ -45,7 +45,7 @@ const Footer = () => {
           </a>
         </div>
       </div>
-      <svg
+      <svg className="logo"
         width="110"
         height="110"
         viewBox="0 0 512 512"
