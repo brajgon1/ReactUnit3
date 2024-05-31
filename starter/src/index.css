@@ -47,9 +47,11 @@ code {
   left: 0;
   bottom: 0;
   color: rgba(255, 255, 255, 0.897);
-  padding: 10px 0;
+  padding: 20px;
   display: flex;
   justify-content: space-between;
+  z-index: 1000;
+  /* display: none; */
 }
 
 .footer h5 {

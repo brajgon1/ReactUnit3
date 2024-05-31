@@ -5,6 +5,7 @@ import { Routes, Route } from "react-router-dom";
 import HomeScreen from "./components/homeComponents/HomeScreen";
 import NewRecipeScreen from "./components/newRecipeComponents/NewRecipeScreen";
 import DetailScreen from "./components/detailComponents/DetailScreen";
+import RecipeCard from "./components/RecipeCard";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route path="newRecipe" element={<NewRecipeScreen />} />
         <Route path="recipe/:id" element={<DetailScreen />} />
       </Routes>
+      <RecipeCard />
       <Footer />
     </div>
   );
