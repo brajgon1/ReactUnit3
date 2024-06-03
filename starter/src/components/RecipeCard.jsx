@@ -1,6 +1,7 @@
 import React from "react";
 import CarbonaraPic from "../assets/carbonara.jpg";
 import StrawberryCheeseCake from "../assets/strawberrycheesecake.webp";
+import OldFashion from "../assets/oldfashion.jpg";
 function RecipeCard() {
   return (
     <div className="recipe-container">
@@ -23,6 +24,15 @@ function RecipeCard() {
           <button className="view-btn">See More</button>
         </div>
       </div>
+
+      <div className="recipe-card">
+        <img src={OldFashion} alt="oldfashion" className="recipe-img" />
+        <div className="recipe-details">
+          <h2 className="name">Old Fashion</h2>
+          <button className="view-btn">See More</button>
+        </div>
+      </div>
+
     </div>
   );
 }
