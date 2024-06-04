@@ -2,8 +2,10 @@ import React from "react";
 import CarbonaraPic from "../assets/carbonara.jpg";
 import StrawberryCheeseCake from "../assets/strawberrycheesecake.webp";
 import OldFashion from "../assets/oldfashion.jpg";
+
 function RecipeCard() {
   return (
+
     <div className="recipe-container">
       <div className="recipe-card">
         <img src={CarbonaraPic} alt="carbonara" className="recipe-img" />
@@ -32,7 +34,6 @@ function RecipeCard() {
           <button className="view-btn">See More</button>
         </div>
       </div>
-
     </div>
   );
 }

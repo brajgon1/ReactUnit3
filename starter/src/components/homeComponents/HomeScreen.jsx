@@ -1,23 +1,38 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import AdBanner from "./AdBanner";
-import { useEffect } from "react";
 import axios from "axios";
+import SearchInput from "../SearchInput";
+import RecipeCard from "../RecipeCard";
 
 const HomeScreen = () => {
-  const recipes = () => {
+  const [recipes, setRecipes] = useState([]);
+  const [search, setSearch] = useState("");
+
+  const recipeDisplay = recipes
+    .filter((recipe) => {
+      let title = recipe.recipe_name.toLowerCase();
+      let searchParams = search.toLowerCase();
+      return title.includes(searchParams);
+    })
+    .map((recipe, index) => {
+      return <RecipeCard key={index} recipe={recipe} />;
+    });
+
+  const getRecipes = () => {
     axios.get("https://recipes.devmountain.com/recipes").then((res) => {
       setRecipes(res.data);
     });
   };
 
   useEffect(() => {
-    recipes();
+    getRecipes();
   }, []);
 
   return (
     <div>
       <AdBanner />
-      {/* Much code from Part 2 will be placed around here. Do your best! */}
+      <SearchInput search={search} setSearch={setSearch} />
+      <div className="recipe-list">{recipeDisplay}</div>
     </div>
   );
 };

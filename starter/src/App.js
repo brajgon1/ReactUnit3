@@ -7,6 +7,7 @@ import NewRecipeScreen from "./components/newRecipeComponents/NewRecipeScreen";
 import DetailScreen from "./components/detailComponents/DetailScreen";
 import RecipeCard from "./components/RecipeCard";
 
+
 function App() {
   return (
     <div className="App">
