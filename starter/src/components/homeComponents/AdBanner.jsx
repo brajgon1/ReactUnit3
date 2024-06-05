@@ -18,7 +18,7 @@ const AdBanner = () => {
         color: "white",
         padding: "10px",
         backgroundRepeat: "no-repeat"
-
+        // marginTop: "100px",
       }}
     >
       <div

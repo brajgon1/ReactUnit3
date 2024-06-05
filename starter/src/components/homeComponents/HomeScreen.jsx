@@ -8,18 +8,11 @@ const HomeScreen = () => {
   const [recipes, setRecipes] = useState([]);
   const [search, setSearch] = useState("");
 
-  const recipeDisplay = recipes
-    .filter((recipe) => {
-      let title = recipe.recipe_name.toLowerCase();
-      let searchParams = search.toLowerCase();
-      return title.includes(searchParams);
-    })
-    .map((recipe, index) => {
-      return <RecipeCard key={index} recipe={recipe} />;
-    });
+
 
   const getRecipes = () => {
     axios.get("https://recipes.devmountain.com/recipes").then((res) => {
+      console.log(res.data)
       setRecipes(res.data);
     });
   };
@@ -32,7 +25,15 @@ const HomeScreen = () => {
     <div>
       <AdBanner />
       <SearchInput search={search} setSearch={setSearch} />
-      <div className="recipe-list">{recipeDisplay}</div>
+      <div className="recipe-list">
+        {recipes
+         .filter((recipe) =>
+            recipe.recipe_name.toLowerCase().includes(search.toLowerCase())
+          )
+         .map((recipe) => (
+            <RecipeCard key={recipe.id} recipe={recipe} />
+          ))}
+      </div>
     </div>
   );
 };
