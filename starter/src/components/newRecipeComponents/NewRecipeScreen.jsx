@@ -1,5 +1,5 @@
 import React from "react";
-import { Formik } from "formik";
+import { Formik, Form } from "formik";
 
 const NewRecipeScreen = () => {
   const initialValues = {
@@ -24,8 +24,18 @@ const NewRecipeScreen = () => {
         {({ values, handleChange, handleSubmit }) => (
           <Form onSubmit={handleSubmit} className="input-container">
             <div className="name-and-img container">
-              <input type="text" id="recipeName" placeholder="Name" />
-              <input type="text" id="imageURL" placeholder="Image URL" />
+              <input
+              type="text"
+              id="recipeName"
+              value={values.recipeName}
+              onChange={handleChange}
+              placeholder="Name" />
+              <input
+              type="text"
+              id="imageURL"
+              value={values.imageURL}
+              onChange={handleChange}
+              placeholder="Image URL" />
             </div>
             <div className="radio-container">
               <input type="radio" id="option1" name="recipeType" />
