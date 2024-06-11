@@ -2,6 +2,7 @@ import React from "react";
 import { Formik, Form } from "formik";
 import { useState } from "react";
 import axios from "axios";
+import "./NewRecipeScreen.css";
 
 const NewRecipeScreen = () => {
   const [ingredients, setIngredients] = useState([]);
@@ -27,16 +28,15 @@ const NewRecipeScreen = () => {
 
   const onSubmit = (values) => {
     values.ingredients = ingredients;
-    axios.get('https://recipes.devmountain.com/recipes', values)
-    .then((res) => {
+    axios.get("https://recipes.devmountain.com/recipes", values).then((res) => {
       console.log(res.data);
-    })
+    });
     console.log(values);
   };
 
   return (
     <section>
-      <h1>Tell us about your Recipe!</h1>
+      <h1 className="title-recipe">Tell us about your Recipe!</h1>
       <Formik initialValues={initialValues} onSubmit={onSubmit}>
         {({ values, handleChange, handleSubmit }) => (
           <Form onSubmit={handleSubmit} className="input-container">
@@ -66,7 +66,7 @@ const NewRecipeScreen = () => {
               <input type="radio" id="option3" name="recipeType" />
               <label for="option3">Drink</label>
             </div>
-            <div className="prop-cook-serves-container">
+            <div className="prep-cook-serves-container">
               <input
                 type="text"
                 id="prepTime"
@@ -93,6 +93,7 @@ const NewRecipeScreen = () => {
               />
             </div>
             <div className="ingredients-container">
+              <div className="input-wrapper">
               <input
                 type="text"
                 id="ingredient"
@@ -107,6 +108,7 @@ const NewRecipeScreen = () => {
                 onChange={(e) => setQuantity(e.target.value)}
                 placeholder="Quantity"
               />
+              </div>
               <div className="add-btn">
                 <button
                   type="button"
@@ -128,7 +130,7 @@ const NewRecipeScreen = () => {
                 onChange={handleChange}
                 placeholder="What are your instructions?"
               ></textarea>
-              <button type="submit">Save</button>
+              <button type="submit" className="save-btn">Save</button>
             </div>
           </Form>
         )}

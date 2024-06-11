@@ -1,0 +1,141 @@
+.title-recipe {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1em;
+  font-size: 2em;
+  font-weight: 600;
+}
+
+.input-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: 1em;
+  padding: 20px;
+  gap: 0.5em;
+  max-width: 100%;
+}
+
+.name-and-img.container {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+input[type="text"],
+textarea {
+  flex: 1;
+  padding: 10px;
+  font-size: 16px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+input[type="text"] {
+  padding: 10px;
+  font-size: 16px;
+}
+
+.radio-container {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.radio-container input[type="radio"] {
+  margin-right: 5px;
+}
+
+.add-btn button {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: darkorange;
+}
+
+.save-btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: rgba(0, 0, 128, 0.764);
+}
+
+@media (max-width: 600px) {
+  .name-and-img.container {
+    flex-direction: column;
+  }
+  .radio-container {
+    flex-direction: column;
+  }
+}
+
+.prep-cook-serves-container {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: 1em;
+  gap: 0.7em;
+}
+
+.prep-cook-serves-container input [type="text"] {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+.ingredients-container {
+  /* display: flex;
+  flex-direction: column;
+  gap: 10px; */
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.ingredients-container input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+.input-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.input-wrapper input {
+    margin-right: 10px;
+}
+
+.add-btn {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 170px;
+    margin-right: 80px;
+}
+
+.textArea-and-btn {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+}
+
+textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+
+
