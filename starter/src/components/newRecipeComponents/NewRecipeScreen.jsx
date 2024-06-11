@@ -28,7 +28,7 @@ const NewRecipeScreen = () => {
 
   const onSubmit = (values) => {
     values.ingredients = ingredients;
-    axios.get("https://recipes.devmountain.com/recipes", values).then((res) => {
+    axios.post("https://recipes.devmountain.com/recipes", values).then((res) => {
       console.log(res.data);
     });
     console.log(values);

@@ -11,7 +11,7 @@ const HomeScreen = () => {
 
 
   const getRecipes = () => {
-    axios.post("https://recipes.devmountain.com/recipes").then((res) => {
+    axios.get("https://recipes.devmountain.com/recipes").then((res) => {
       console.log(res.data)
       setRecipes(res.data);
     });

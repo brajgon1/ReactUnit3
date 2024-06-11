@@ -11,6 +11,7 @@ const DetailScreen = () => {
     console.log(id);
     axios.get(`https://recipes.devmountain.com/recipes/${id}`).then((res) => {
       console.log(res.data);
+      console.log("here", res.data);
       setRecipe(res.data);
     });
   }, [id]);
@@ -50,7 +51,7 @@ const DetailScreen = () => {
               <div className="recipe-section instructions">
                 <h2>Instructions</h2>
                 <p style={{ whiteSpace: "pre-wrap" }}>
-                  {JSON.parse(recipe.instructions)}
+                  {recipe.instructions}
                 </p>
               </div>
             )}
