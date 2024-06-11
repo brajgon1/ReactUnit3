@@ -1,20 +1,18 @@
 import React from "react";
 import { Formik, Form } from "formik";
 import { useState } from "react";
+import axios from "axios";
 
 const NewRecipeScreen = () => {
   const [ingredients, setIngredients] = useState([]);
   const [name, setName] = useState("");
   const [quantity, setQuantity] = useState("");
 
-//   Create an arrow function called addIngredient.
-
-// It should setIngredients to the previous values, as well as add an object that contains both name and quantity.
-const addIngredient = () => {
-  setIngredients([...ingredients, { name, quantity }]);
-  setName("");
-  setQuantity("");
-}
+  const addIngredient = () => {
+    setIngredients([...ingredients, { name, quantity }]);
+    setName("");
+    setQuantity("");
+  };
 
   const initialValues = {
     type: "",
@@ -28,6 +26,11 @@ const addIngredient = () => {
   };
 
   const onSubmit = (values) => {
+    values.ingredients = ingredients;
+    axios.get('https://recipes.devmountain.com/recipes', values)
+    .then((res) => {
+      console.log(res.data);
+    })
     console.log(values);
   };
 
@@ -90,10 +93,28 @@ const addIngredient = () => {
               />
             </div>
             <div className="ingredients-container">
-              <input type="text" id="ingredient" placeholder="Ingredient" />
-              <input type="text" id="quantity" placeholder="Quantity" />
+              <input
+                type="text"
+                id="ingredient"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                placeholder="Ingredient"
+              />
+              <input
+                type="text"
+                id="quantity"
+                value={quantity}
+                onChange={(e) => setQuantity(e.target.value)}
+                placeholder="Quantity"
+              />
               <div className="add-btn">
-                <button type="submit">Add Another</button>
+                <button
+                  type="button"
+                  className="add-another-btn"
+                  onClick={addIngredient}
+                >
+                  Add Another
+                </button>
               </div>
             </div>
             <div className="textArea-and-btn">
